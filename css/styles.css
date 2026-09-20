@@ -360,12 +360,12 @@ h1, h2, h3, p { margin: 0; }
 .plans__track { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 28px); }
 
 .plan {
-  position: relative; display: flex; flex-direction: column; padding: 34px 30px 30px; border-radius: var(--r-lg); overflow: hidden;
+  position: relative; display: flex; flex-direction: column; padding: 46px 30px 30px; border-radius: var(--r-lg); overflow: hidden;
   background: var(--card); border: 1px solid rgba(255, 255, 255, 0.9);
   transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
 }
 .plan:hover { transform: translateY(-8px); box-shadow: 0 34px 70px -34px rgba(11, 34, 90, 0.5); }
-.plan__wifi { position: absolute; right: 22px; top: 22px; width: 84px; height: 84px; fill: none; stroke: var(--blue-2); stroke-width: 1.2; stroke-linecap: round; opacity: 0.22; transition: opacity 0.4s; }
+.plan__wifi { position: absolute; right: 22px; top: 40px; width: 84px; height: 84px; fill: none; stroke: var(--blue-2); stroke-width: 1.2; stroke-linecap: round; opacity: 0.22; transition: opacity 0.4s; }
 .plan:hover .plan__wifi { opacity: 0.5; }
 /* No hover, os três arcos acendem em sequência (do menor para o maior) e se expandem a partir do ponto, como um sinal saindo do roteador */
 .plan__wifi path { transform-origin: 12px 20px; }
@@ -398,6 +398,17 @@ h1, h2, h3, p { margin: 0; }
 .plan--dark .plan__wifi { stroke: var(--sky); opacity: 0.3; }
 .plan--dark .plan__list .ico { background: rgba(255, 194, 26, 0.16); color: var(--yellow); }
 
+/* Faixa "Mais vendido" no topo do card do Gamer */
+.plan__badge {
+  position: absolute; z-index: 2; inset: 0 0 auto 0; height: 36px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--grad-warm); color: var(--ink);
+  font: 800 0.72rem/1 var(--font-display); letter-spacing: 0.18em; text-transform: uppercase;
+}
+.plan__badge .ico { width: 14px; height: 14px; fill: currentColor; stroke: none; }
+.plan__badge::after { content: ""; position: absolute; inset: 0; width: 45%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent); transform: translateX(-130%); animation: badgeShine 4.2s ease-in-out 1.6s infinite; }
+@keyframes badgeShine { 0% { transform: translateX(-130%); } 40%, 100% { transform: translateX(330%); } }
+
 /* Desktop: o Plano Gamer vai para o centro e fica maior, para se destacar (no celular segue a ordem por velocidade) */
 @media (min-width: 981px) {
   .plan { order: 1; }
@@ -413,7 +424,7 @@ h1, h2, h3, p { margin: 0; }
 }
 .plan--dark.spot::before, .svc.spot::before { background: radial-gradient(420px circle at var(--mx) var(--my), rgba(140, 196, 255, 0.2), transparent 55%); }
 .spot:hover::before { opacity: 1; }
-.spot > :not(.plan__wifi):not(.svc__go) { position: relative; }
+.spot > :not(.plan__wifi):not(.svc__go):not(.plan__badge) { position: relative; }
 
 /* ---------- Números ---------- */
 .stats {
