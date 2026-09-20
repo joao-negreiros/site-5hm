@@ -99,12 +99,15 @@
 
   // Seção ativa (rail + nav)
   const sectionIds = ["top", "planos", "disponibilidade", "app", "vantagens", "como-contratar", "faq", "contato"];
+  // Seções sem item próprio no menu acendem o item da seção a que pertencem (Como contratar e FAQ ficam com Vantagens)
+  const GROUPED = { "como-contratar": "vantagens", faq: "vantagens" };
   const railLinks = $$(".rail__link");
   const navLinks = $$(".nav__link");
   const spy = new IntersectionObserver((entries) => {
     entries.forEach((en) => {
       if (!en.isIntersecting) return;
-      const id = en.target.id || "top";
+      const raw = en.target.id || "top";
+      const id = GROUPED[raw] || raw;
       railLinks.forEach((l) => l.classList.toggle("is-active", l.dataset.target === id));
       navLinks.forEach((l) => l.classList.toggle("is-active", l.getAttribute("href") === "#" + id));
     });
