@@ -113,6 +113,8 @@ h1, h2, h3, p { margin: 0; }
 .btn--ghost { padding: 0 26px; height: 58px; border: 1.5px solid var(--line); color: var(--ink); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(8px); }
 .btn--ghost:hover { border-color: var(--blue-2); color: var(--blue); transform: translateY(-3px); }
 .btn--block { width: 100%; justify-content: space-between; }
+/* Botões só de texto (sem círculo com ícone) */
+.btn--solo { padding: 0 34px; height: 58px; justify-content: center; }
 
 .round-btn {
   width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
@@ -627,7 +629,7 @@ h1, h2, h3, p { margin: 0; }
   .footer__bottom { padding-bottom: 96px; }
   .footer__grid { grid-template-columns: 1fr; }
   .avail__form { grid-template-columns: 1fr; }
-  .avail__form .btn { justify-content: space-between; }
+  .avail__form .btn { justify-content: center; }
   .doubt__net i:nth-child(1), .doubt__net i:nth-child(6) { left: 88%; }
 }
 
