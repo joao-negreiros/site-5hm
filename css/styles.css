@@ -116,6 +116,7 @@ h1, h2, h3, p { margin: 0; }
 .btn--block { width: 100%; justify-content: space-between; }
 /* Linha com o botão Contratar agora, centralizado abaixo de uma seção */
 .cta-row { display: flex; justify-content: center; margin-top: clamp(36px, 5vw, 56px); }
+.cta-row .btn { width: min(100%, 440px); }
 /* Botões só de texto (sem círculo com ícone) */
 .btn--solo { padding: 0 34px; height: 58px; justify-content: center; }
 
