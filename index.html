@@ -148,7 +148,7 @@
   <main>
 
     <!-- HERO -->
-    <section class="hero" aria-roledescription="carrossel" aria-label="Destaques">
+    <section class="hero" aria-label="Destaque">
       <div class="hero__bg" aria-hidden="true">
         <span class="hero__blob"></span>
         <span class="hero__dots"></span>
@@ -158,24 +158,13 @@
         <div class="hero__copy">
           <div class="slides" id="slides">
 
-            <article class="slide is-active" data-slide="0" aria-label="1 de 2">
-              <p class="eyebrow" data-reveal><svg class="ico" aria-hidden="true"><use href="#i-bolt"/></svg> #VemSer5HMTelecom</p>
+            <article class="slide is-active">
               <h1 class="hero__title" data-reveal style="--d:.08s">
                 <span class="hero__line">Ultravelocidade</span>
                 <span class="hero__big grad">600MB</span>
               </h1>
               <p class="hero__lead" data-reveal style="--d:.16s">Contrate uma internet de qualidade.</p>
             </article>
-
-            <article class="slide" data-slide="1" aria-label="2 de 2">
-              <p class="eyebrow"><svg class="ico" aria-hidden="true"><use href="#i-game"/></svg> Fibra óptica</p>
-              <h2 class="hero__title">
-                <span class="hero__line">Planos</span>
-                <span class="hero__big grad">Gamer</span>
-              </h2>
-              <p class="hero__lead">Jogue seus jogos com ultravelocidade!</p>
-            </article>
-
           </div>
 
           <div class="hero__actions" data-reveal style="--d:.24s">
@@ -186,14 +175,6 @@
             <a class="btn btn--ghost" href="#planos"><span>Ver planos</span></a>
           </div>
 
-          <div class="hero__controls" data-reveal style="--d:.32s">
-            <button class="round-btn round-btn--light" id="prevSlide" aria-label="Anterior"><svg class="ico" aria-hidden="true"><use href="#i-chev-l"/></svg></button>
-            <button class="round-btn round-btn--dark" id="nextSlide" aria-label="Próximo"><svg class="ico" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
-            <div class="dots" id="dots" role="tablist" aria-label="Escolher slide">
-              <button class="dot is-active" role="tab" aria-label="Slide 1" aria-selected="true"><i></i></button>
-              <button class="dot" role="tab" aria-label="Slide 2" aria-selected="false"><i></i></button>
-            </div>
-          </div>
         </div>
 
         <div class="hero__stage" id="stage" data-reveal="scale" style="--d:.1s">
@@ -219,10 +200,6 @@
               <svg viewBox="0 0 120 70"><path class="meter__track" d="M10 62a50 50 0 0 1 100 0"/><path class="meter__val" d="M10 62a50 50 0 0 1 100 0" pathLength="100"/></svg>
             </span>
             <span class="stage__num">600<small>MB</small></span>
-          </div>
-          <div class="stage__card stage__card--game" data-depth="-20">
-            <span class="chip__ico chip__ico--y"><svg class="ico" aria-hidden="true"><use href="#i-game"/></svg></span>
-            <span><b>Melhor latência</b><small>Estabilidade nos jogos</small></span>
           </div>
         </div>
       </div>

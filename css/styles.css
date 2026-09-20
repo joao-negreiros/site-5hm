@@ -265,14 +265,6 @@ h1, h2, h3, p { margin: 0; }
 .hero__big { display: block; font-size: clamp(4.4rem, 10.6vw, 9.2rem); font-weight: 800; line-height: 1; padding-bottom: 0.06em; }
 .hero__lead { margin-top: 22px; max-width: 26ch; font-size: clamp(1.05rem, 1.6vw, 1.3rem); line-height: 1.5; color: #2a3757; }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 34px; }
-.hero__controls { display: flex; align-items: center; gap: 12px; margin-top: 38px; }
-.dots { display: flex; gap: 10px; margin-left: 10px; }
-.dot { width: 34px; height: 20px; display: grid; place-items: center; }
-.dot i { display: block; width: 100%; height: 4px; border-radius: 4px; background: rgba(11, 21, 48, 0.16); position: relative; overflow: hidden; }
-.dot i::after { content: ""; position: absolute; inset: 0; background: var(--blue); transform: scaleX(0); transform-origin: left; }
-.dot.is-active i::after { animation: dotFill var(--slide-ms, 7000ms) linear forwards; }
-.hero.is-paused .dot.is-active i::after { animation-play-state: paused; }
-@keyframes dotFill { to { transform: scaleX(1); } }
 
 /* Stage */
 .hero__stage { position: relative; aspect-ratio: 1; width: 100%; max-width: 640px; justify-self: end; }
@@ -308,7 +300,6 @@ h1, h2, h3, p { margin: 0; }
 @keyframes meterFill { to { stroke-dashoffset: 8; } }
 .stage__num { font: 800 1.9rem/1 var(--font-display); margin-top: -18px; letter-spacing: -0.02em; }
 .stage__num small { display: inline; font-size: 0.85rem; color: var(--muted); margin-left: 2px; }
-.stage__card--game { margin-left: -100px; }
 
 /* ---------- Faixa escura ---------- */
 .strip-wrap { margin-bottom: clamp(40px, 6vw, 72px); }
@@ -624,8 +615,7 @@ h1, h2, h3, p { margin: 0; }
   .chip__ico { width: 32px; height: 32px; border-radius: 10px; }
   .chip small { display: none; }
   .chip b { font-size: 0.74rem; }
-  .stage__card--game small { display: none; }
-  .strip__list h3 { font-size: 0.8rem; }
+    .strip__list h3 { font-size: 0.8rem; }
   .adv__list { grid-template-columns: 1fr; }
   .adv__card:nth-child(even), .adv__card:nth-child(even):hover { transform: none; }
   .js .adv__card:nth-child(even)[data-reveal]:not(.in) { transform: translateY(28px); }

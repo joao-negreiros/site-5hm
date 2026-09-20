@@ -317,57 +317,6 @@
   })();
 
   /* ======================================================================
-     5. Carrossel do hero
-     ====================================================================== */
-  (() => {
-    const hero = $(".hero");
-    const slides = $$(".slide");
-    const dots = $$(".dot");
-    const speedCard = $(".stage__card--speed");
-    const gameCard = $(".stage__card--game");
-    const SLIDE_MS = 7000;
-    hero.style.setProperty("--slide-ms", SLIDE_MS + "ms");
-    let i = 0, timer = null;
-
-    const go = (n) => {
-      i = (n + slides.length) % slides.length;
-      slides.forEach((s, k) => {
-        s.classList.toggle("is-active", k === i);
-        s.setAttribute("aria-hidden", k !== i);
-      });
-      dots.forEach((d, k) => {
-        d.classList.remove("is-active"); void d.offsetWidth; // reinicia a barra de progresso
-        d.classList.toggle("is-active", k === i);
-        d.setAttribute("aria-selected", k === i);
-      });
-      speedCard.classList.toggle("is-active", i === 0);
-      gameCard.classList.toggle("is-active", i === 1);
-      restart();
-    };
-    const restart = () => {
-      clearTimeout(timer);
-      if (!reduceMotion && !hero.classList.contains("is-paused")) timer = setTimeout(() => go(i + 1), SLIDE_MS);
-    };
-    $("#nextSlide").addEventListener("click", () => go(i + 1));
-    $("#prevSlide").addEventListener("click", () => go(i - 1));
-    dots.forEach((d, k) => d.addEventListener("click", () => go(k)));
-    hero.addEventListener("pointerenter", () => { hero.classList.add("is-paused"); clearTimeout(timer); });
-    hero.addEventListener("pointerleave", () => { hero.classList.remove("is-paused"); go(i); });
-
-    // swipe
-    let sx = 0;
-    hero.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; }, { passive: true });
-    hero.addEventListener("touchend", (e) => {
-      const dx = e.changedTouches[0].clientX - sx;
-      if (Math.abs(dx) > 50) go(i + (dx < 0 ? 1 : -1));
-    }, { passive: true });
-
-    slides.forEach((s, k) => s.setAttribute("aria-hidden", k !== 0));
-    // só começa a contar depois do preloader
-    const wait = setInterval(() => { if (body.classList.contains("is-loaded")) { clearInterval(wait); go(0); } }, 120);
-  })();
-
-  /* ======================================================================
      6. Parallax do ponteiro (hero) e spotlight nos cards
      ====================================================================== */
   (() => {
