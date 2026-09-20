@@ -188,22 +188,14 @@ h1, h2, h3, p { margin: 0; }
 .nav__link:hover::after, .nav__link.is-active::after { transform: scaleX(1); }
 .nav__link--cta { display: none; }
 
-/* Botão "Área do Cliente": só texto; no hover o amarelo preenche o botão da esquerda para a direita. */
+/* Botão "Área do Cliente": mesmo visual e hover do "Ver planos" (azul escuro, clareia ao passar o mouse). */
 .pill-btn {
-  position: relative; isolation: isolate; overflow: hidden;
   display: inline-flex; align-items: center; justify-content: center; height: 50px; padding: 0 28px; border-radius: 999px;
-  background: var(--blue-deep); color: #fff; border: 1px solid rgba(255, 255, 255, 0.14); box-shadow: 0 12px 28px -14px rgba(15, 59, 117, 0.75);
+  background: var(--blue-deep); color: #fff; box-shadow: 0 12px 28px -14px rgba(15, 59, 117, 0.75);
   font: 600 0.88rem/1 var(--font-display);
-  transition: transform 0.7s var(--ease), box-shadow 0.7s var(--ease), border-color 0.7s var(--ease);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.3s;
 }
-.pill-btn::before {
-  content: ""; position: absolute; z-index: -1; inset: 0; border-radius: inherit; background: var(--yellow);
-  transform: scaleX(0); transform-origin: left; transition: transform 0.8s var(--ease);
-}
-.pill-btn__txt { position: relative; transition: color 0.5s var(--ease); }
-.pill-btn:hover .pill-btn__txt, .pill-btn:focus-visible .pill-btn__txt { color: var(--ink); }
-.pill-btn:hover, .pill-btn:focus-visible { transform: translateY(-2px); border-color: transparent; box-shadow: 0 18px 38px -16px rgba(247, 147, 30, 0.55); }
-.pill-btn:hover::before, .pill-btn:focus-visible::before { transform: scaleX(1); }
+.pill-btn:hover, .pill-btn:focus-visible { background: var(--blue); transform: translateY(-3px); box-shadow: 0 18px 34px -14px rgba(27, 101, 170, 0.8); }
 
 .burger { display: none; width: 46px; height: 46px; border-radius: 50%; background: #fff; box-shadow: var(--shadow-1); place-items: center; }
 .burger .ico--close { display: none; }
