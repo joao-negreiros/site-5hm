@@ -98,14 +98,15 @@
   addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
 
   // Seção ativa (rail + nav)
-  const sectionIds = ["top", "planos", "vantagens", "app", "contato"];
+  const sectionIds = ["top", "planos", "disponibilidade", "vantagens", "app", "contato"];
   const railLinks = $$(".rail__link");
   const navLinks = $$(".nav__link");
   const spy = new IntersectionObserver((entries) => {
     entries.forEach((en) => {
       if (!en.isIntersecting) return;
       const id = en.target.id || "top";
-      railLinks.forEach((l) => l.classList.toggle("is-active", l.dataset.target === id));
+      const railId = id === "disponibilidade" ? "planos" : id; // o rail não tem item próprio para disponibilidade
+      railLinks.forEach((l) => l.classList.toggle("is-active", l.dataset.target === railId));
       navLinks.forEach((l) => l.classList.toggle("is-active", l.getAttribute("href") === "#" + id));
     });
   }, { rootMargin: "-45% 0px -50% 0px" });
