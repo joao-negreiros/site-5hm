@@ -105,8 +105,7 @@
     entries.forEach((en) => {
       if (!en.isIntersecting) return;
       const id = en.target.id || "top";
-      const railId = id === "disponibilidade" ? "planos" : id; // o rail não tem item próprio para disponibilidade
-      railLinks.forEach((l) => l.classList.toggle("is-active", l.dataset.target === railId));
+      railLinks.forEach((l) => l.classList.toggle("is-active", l.dataset.target === id));
       navLinks.forEach((l) => l.classList.toggle("is-active", l.getAttribute("href") === "#" + id));
     });
   }, { rootMargin: "-45% 0px -50% 0px" });
