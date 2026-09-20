@@ -430,7 +430,7 @@ h1, h2, h3, p { margin: 0; }
 /* ---------- Vantagens ---------- */
 .adv__grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
 .adv__intro { position: sticky; top: 120px; }
-.adv__orbit { position: relative; width: 210px; aspect-ratio: 1; margin-top: 56px; display: grid; place-items: center; color: var(--blue); }
+.adv__orbit { position: relative; width: 210px; aspect-ratio: 1; margin: 56px auto 0; display: grid; place-items: center; color: var(--blue); }
 .adv__orbit > .ico { width: 44px; height: 44px; stroke-width: 1.6; }
 .orb { position: absolute; border-radius: 50%; border: 1px solid rgba(27, 101, 170, 0.3); inset: 0; }
 .orb--2 { inset: 22%; border-style: dashed; animation: spin 24s linear infinite; }
@@ -447,9 +447,6 @@ h1, h2, h3, p { margin: 0; }
 .adv__card:hover .adv__ico { transform: rotate(-8deg) scale(1.06); background: var(--ink); color: var(--yellow); }
 .adv__card h3 { font: 700 1.05rem/1.2 var(--font-display); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
 .adv__card p { color: var(--muted); font-size: 0.95rem; }
-.adv__card:nth-child(even) { transform: translateY(28px); }
-.adv__card:nth-child(even):hover { transform: translateY(22px); }
-.js .adv__card:nth-child(even)[data-reveal]:not(.in) { transform: translateY(56px); }
 
 /* ---------- Dúvidas ---------- */
 .doubt {
@@ -624,8 +621,6 @@ h1, h2, h3, p { margin: 0; }
   .chip--b { bottom: 33%; }
   .chip b { font-size: 0.74rem; }
   .adv__list { grid-template-columns: 1fr; }
-  .adv__card:nth-child(even), .adv__card:nth-child(even):hover { transform: none; }
-  .js .adv__card:nth-child(even)[data-reveal]:not(.in) { transform: translateY(28px); }
   .app__feats { grid-template-columns: 1fr; }
   .stat { flex-direction: column; align-items: flex-start; gap: 10px; }
   .stat b { font-size: 1.4rem; }
