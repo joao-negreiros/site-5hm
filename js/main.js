@@ -419,6 +419,9 @@
   /* ======================================================================
      11. Extras
      ====================================================================== */
+  // Redes sociais ainda sem link (href="#"): o clique não faz nada, em vez de rolar para o topo
+  $$('.social__link[href="#"]').forEach((a) => a.addEventListener("click", (e) => e.preventDefault()));
+
   const year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
 })();
