@@ -365,8 +365,19 @@ h1, h2, h3, p { margin: 0; }
   transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
 }
 .plan:hover { transform: translateY(-8px); box-shadow: 0 34px 70px -34px rgba(11, 34, 90, 0.5); }
-.plan__wifi { position: absolute; right: 22px; top: 22px; width: 84px; height: 84px; fill: none; stroke: var(--blue-2); stroke-width: 1.2; opacity: 0.22; transition: transform 0.7s var(--ease), opacity 0.4s; }
-.plan:hover .plan__wifi { transform: scale(1.12) rotate(-6deg); opacity: 0.4; }
+.plan__wifi { position: absolute; right: 22px; top: 22px; width: 84px; height: 84px; fill: none; stroke: var(--blue-2); stroke-width: 1.2; stroke-linecap: round; opacity: 0.22; transition: opacity 0.4s; }
+.plan:hover .plan__wifi { opacity: 0.5; }
+/* No hover, os três arcos acendem em sequência (do menor para o maior) e se expandem a partir do ponto, como um sinal saindo do roteador */
+.plan__wifi path { transform-origin: 12px 20px; }
+.plan:hover .plan__wifi .w1, .plan:hover .plan__wifi .w2, .plan:hover .plan__wifi .w3 { animation: wifiWave 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite both; }
+.plan:hover .plan__wifi .w2 { animation-delay: 0.22s; }
+.plan:hover .plan__wifi .w3 { animation-delay: 0.44s; }
+@keyframes wifiWave {
+  0%   { opacity: 0.12; transform: scale(0.78); }
+  30%  { opacity: 1;    transform: scale(1); }
+  62%  { opacity: 1;    transform: scale(1); }
+  100% { opacity: 0.12; transform: scale(1.1); }
+}
 .plan__tag { align-self: flex-start; padding: 8px 14px; border-radius: 999px; background: var(--ink); color: #fff; font: 700 0.7rem/1 var(--font-display); letter-spacing: 0.14em; text-transform: uppercase; }
 .plan__type { margin-top: 26px; font: 600 0.78rem/1 var(--font-display); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 .plan__speed { display: flex; align-items: baseline; gap: 6px; margin-top: 8px; font: 800 clamp(4.2rem, 7vw, 5.6rem)/1 var(--font-display); letter-spacing: -0.04em; }
