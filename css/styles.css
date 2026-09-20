@@ -505,9 +505,7 @@ h1, h2, h3, p { margin: 0; }
 .footer__talk .btn { margin-top: 28px; }
 .footer__col ul { display: grid; gap: 12px; }
 .footer__col a { transition: color 0.3s; }
-.footer__col a:hover, .footer__phone a:hover { color: var(--yellow); }
-.footer__phone { margin-top: 22px; font-size: 0.92rem; }
-.footer__phone a { color: #fff; font-weight: 600; transition: color 0.3s; }
+.footer__col a:hover { color: var(--yellow); }
 .footer__bottom { display: flex; align-items: center; justify-content: space-between; padding-block: 26px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.88rem; }
 .footer__up { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(255, 255, 255, 0.2); transition: 0.4s var(--ease); }
 .footer__up .ico { transform: rotate(-90deg); }
