@@ -413,12 +413,19 @@ h1, h2, h3, p { margin: 0; }
 /* Card de números liso, em um único tom de azul escuro (sem degradê nem brilho azul) */
 .stats::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.12) 50%, transparent 60%); transform: translateX(-100%); animation: sheen 6s ease-in-out 1.5s infinite; }
 @keyframes sheen { 0%, 60% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
-.stat { display: flex; align-items: center; gap: 16px; padding: 4px clamp(10px, 2vw, 28px); border-left: 1px solid rgba(255, 255, 255, 0.12); }
+.stat { display: flex; align-items: center; gap: 16px; padding: 4px clamp(10px, 1.5vw, 20px); border-left: 1px solid rgba(255, 255, 255, 0.12); }
 .stat:first-child { border-left: 0; padding-left: 0; }
 .stat .ico { width: 34px; height: 34px; stroke-width: 1.5; color: var(--yellow); }
 .stat b { display: block; font: 700 1.7rem/1.1 var(--font-display); letter-spacing: -0.02em; }
 .stat small { font-size: 0.78rem; color: #d3e5ff; }
-.stat b.stat__txt { font-size: 1rem; line-height: 1.3; letter-spacing: 0.04em; text-transform: uppercase; }
+.stat b.stat__txt { font-size: 0.95rem; line-height: 1.35; letter-spacing: 0.03em; text-transform: uppercase; }
+@media (min-width: 981px) and (max-width: 1180px) {
+  /* telas intermediárias: grade 2x2 (igual ao tablet) para o texto manter o tamanho e não quebrar em três linhas */
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 22px 0; }
+  .stat:nth-child(3) { border-left: 0; padding-left: 0; }
+  /* mesma razão: o formulário de disponibilidade fica em uma coluna para os campos não ficarem espremidos */
+  .avail { grid-template-columns: 1fr; }
+}
 
 /* ---------- Vantagens ---------- */
 .adv__grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
