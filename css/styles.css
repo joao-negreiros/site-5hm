@@ -448,24 +448,6 @@ h1, h2, h3, p { margin: 0; }
 .adv__card h3 { font: 700 1.05rem/1.2 var(--font-display); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
 .adv__card p { color: var(--muted); font-size: 0.95rem; }
 
-/* ---------- Dúvidas ---------- */
-.doubt {
-  position: relative; overflow: hidden; display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: clamp(24px, 5vw, 64px);
-  padding: clamp(32px, 6vw, 72px); border-radius: var(--r-lg);
-  background: radial-gradient(70% 120% at 0% 0%, #1b3f86 0%, transparent 60%), linear-gradient(135deg, #0a1636 0%, #100f3e 100%);
-  color: #fff; box-shadow: var(--shadow-2);
-}
-.doubt__net i { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--sky); box-shadow: 0 0 0 8px rgba(140, 196, 255, 0.12), 0 0 20px var(--sky); animation: twinkle 4s ease-in-out infinite; }
-.doubt__net i:nth-child(1) { left: 8%; top: 18%; } .doubt__net i:nth-child(2) { left: 46%; top: 10%; animation-delay: -1s; }
-.doubt__net i:nth-child(3) { left: 60%; top: 78%; animation-delay: -2s; background: var(--yellow); box-shadow: 0 0 0 8px rgba(255, 194, 26, 0.12), 0 0 20px var(--yellow); }
-.doubt__net i:nth-child(4) { left: 30%; top: 84%; animation-delay: -3s; } .doubt__net i:nth-child(5) { left: 92%; top: 24%; animation-delay: -1.5s; } .doubt__net i:nth-child(6) { left: 3%; top: 62%; animation-delay: -2.5s; }
-@keyframes twinkle { 0%, 100% { opacity: 0.25; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.1); } }
-.doubt__copy { position: relative; }
-.doubt__text { margin-top: 18px; color: #c6d8f6; font-size: 1.15rem; max-width: 30ch; }
-.doubt__card { position: relative; padding: 34px; border-radius: 26px; background: rgba(8, 14, 38, 0.6); backdrop-filter: blur(10px); box-shadow: inset 0 0 0 1.5px rgba(122, 140, 255, 0.55), 0 0 60px -10px rgba(78, 100, 255, 0.5); display: grid; gap: 22px; justify-items: start; }
-.doubt__card .ico--lg { width: 42px; height: 42px; color: var(--yellow); }
-.doubt__card p { font: 600 1.2rem/1.35 var(--font-display); max-width: 20ch; }
-
 /* ---------- App ---------- */
 .app { overflow: hidden; }
 .app__grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: center; gap: clamp(32px, 6vw, 96px); }
@@ -600,7 +582,6 @@ h1, h2, h3, p { margin: 0; }
   .stats { grid-template-columns: repeat(2, 1fr); gap: 22px 0; }
   .stat:nth-child(3) { border-left: 0; padding-left: 0; }
 
-  .doubt { grid-template-columns: 1fr; }
   .selfcare__grid { grid-template-columns: 1fr; }
   .avail { grid-template-columns: 1fr; }
   .steps__list { grid-template-columns: 1fr; }
@@ -630,7 +611,6 @@ h1, h2, h3, p { margin: 0; }
   .footer__grid { grid-template-columns: 1fr; }
   .avail__form { grid-template-columns: 1fr; }
   .avail__form .btn { justify-content: center; }
-  .doubt__net i:nth-child(1), .doubt__net i:nth-child(6) { left: 88%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
