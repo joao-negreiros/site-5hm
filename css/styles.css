@@ -403,7 +403,7 @@ h1, h2, h3, p { margin: 0; }
 }
 .plan--dark.spot::before, .svc.spot::before { background: radial-gradient(420px circle at var(--mx) var(--my), rgba(140, 196, 255, 0.2), transparent 55%); }
 .spot:hover::before { opacity: 1; }
-.spot > :not(.plan__wifi):not(.svc__go) { position: relative; }
+.spot > :not(.plan__wifi) { position: relative; }
 
 /* ---------- Números ---------- */
 .stats {
@@ -480,12 +480,10 @@ h1, h2, h3, p { margin: 0; }
 .selfcare .wrap { position: relative; }
 .selfcare__head { margin-bottom: clamp(32px, 5vw, 56px); }
 .selfcare__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 2vw, 24px); }
-.svc { display: flex; flex-direction: column; justify-content: space-between; gap: 64px; min-height: 240px; padding: 28px; border-radius: var(--r-md); overflow: hidden; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.14); backdrop-filter: blur(10px); transition: transform 0.6s var(--ease), border-color 0.4s, background 0.4s; }
+.svc { display: flex; align-items: center; justify-content: flex-start; gap: 16px; padding: 20px 22px; border-radius: var(--r-md); overflow: hidden; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.14); backdrop-filter: blur(10px); transition: transform 0.6s var(--ease), border-color 0.4s, background 0.4s; }
 .svc:hover { transform: translateY(-8px); border-color: rgba(255, 194, 26, 0.6); background: rgba(255, 255, 255, 0.1); }
-.svc__ico { display: grid; place-items: center; width: 60px; height: 60px; border-radius: 20px; background: var(--yellow); color: var(--ink); font-size: 1.25rem; }
-.svc__label { font: 700 clamp(1.15rem, 1.8vw, 1.45rem)/1.2 var(--font-display); letter-spacing: 0.04em; text-transform: uppercase; }
-.svc__go { position: absolute; right: 24px; top: 24px; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(255, 255, 255, 0.25); transition: transform 0.5s var(--ease), background 0.3s, color 0.3s; }
-.svc:hover .svc__go { background: var(--yellow); color: var(--ink); transform: rotate(45deg); border-color: transparent; }
+.svc__ico { display: grid; place-items: center; flex: none; width: 52px; height: 52px; border-radius: 16px; background: var(--yellow); color: var(--ink); font-size: 1.15rem; }
+.svc__label { font: 700 clamp(0.9rem, 1.2vw, 1.02rem)/1.25 var(--font-display); letter-spacing: 0.04em; text-transform: uppercase; }
 
 .stores { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--line); }
 .stores > p { font: 600 0.82rem/1.4 var(--font-display); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); max-width: 40ch; }
@@ -586,7 +584,6 @@ h1, h2, h3, p { margin: 0; }
   .steps__list { grid-template-columns: 1fr; }
   .step:not(:last-child)::after { display: none; }
   .svc { min-height: 0; flex-direction: row; align-items: center; gap: 18px; justify-content: flex-start; padding: 22px; }
-  .svc__go { top: 50%; margin-top: -21px; }
 }
 
 @media (max-width: 640px) {
