@@ -185,9 +185,13 @@ h1, h2, h3, p { margin: 0; }
 .nav__link::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; border-radius: 3px;
   background: var(--grad-warm); transform: scaleX(0); transform-origin: right; opacity: 0.6;
-  transition: transform 0.7s var(--ease), opacity 0.5s var(--ease);
+  transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.6s ease;
 }
-.nav__link:hover::after, .nav__link:focus-visible::after, .nav__link.is-active::after { transform: scaleX(1); transform-origin: left; opacity: 1; }
+/* Curva simétrica (ease-in-out) para o preenchimento ser visível do começo ao fim, e não só um "estalo" inicial */
+.nav__link:hover::after, .nav__link:focus-visible::after, .nav__link.is-active::after {
+  transform: scaleX(1); transform-origin: left; opacity: 1;
+  transition-duration: 1.4s, 0.6s;
+}
 .nav__link--cta { display: none; }
 
 /* Botão "Área do Cliente": mesmo visual e hover do "Ver planos" (azul escuro, clareia ao passar o mouse). */
@@ -251,7 +255,11 @@ h1, h2, h3, p { margin: 0; }
 .hero__title { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; line-height: 0.98; letter-spacing: -0.03em; }
 .hero__line { display: block; font-size: clamp(2rem, 4.2vw, 3.7rem); }
 .hero__big { display: block; font-size: clamp(4.4rem, 10.6vw, 9.2rem); font-weight: 800; line-height: 1; padding-bottom: 0.06em; }
-.hero__lead { margin-top: 22px; white-space: nowrap; font-size: clamp(0.95rem, 4.3vw, 1.3rem); line-height: 1.5; color: #2a3757; }
+.hero__lead { margin-top: 22px; white-space: nowrap; font-size: clamp(1.05rem, 1.6vw, 1.3rem); line-height: 1.5; color: #2a3757; }
+@media (max-width: 700px) {
+  /* frase longa: em celulares estreitos quebra em duas linhas equilibradas em vez de encolher a letra */
+  .hero__lead { white-space: normal; text-wrap: balance; font-size: 1.05rem; max-width: 34ch; }
+}
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 34px; }
 
 /* Stage */
