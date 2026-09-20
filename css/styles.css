@@ -181,11 +181,13 @@ h1, h2, h3, p { margin: 0; }
 
 .nav { display: flex; align-items: center; gap: clamp(20px, 3vw, 44px); }
 .nav__link { position: relative; font: 500 0.92rem/1 var(--font-display); padding: 8px 0; color: var(--ink); }
+/* Barra amarela: entra da esquerda ao passar o mouse e sai pela direita ao tirar (a origem troca sem transição) */
 .nav__link::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; border-radius: 2px;
-  background: var(--yellow); transform: scaleX(0); transform-origin: left; transition: transform 0.4s var(--ease);
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; border-radius: 3px;
+  background: var(--grad-warm); transform: scaleX(0); transform-origin: right; opacity: 0.6;
+  transition: transform 0.7s var(--ease), opacity 0.5s var(--ease);
 }
-.nav__link:hover::after, .nav__link.is-active::after { transform: scaleX(1); }
+.nav__link:hover::after, .nav__link:focus-visible::after, .nav__link.is-active::after { transform: scaleX(1); transform-origin: left; opacity: 1; }
 .nav__link--cta { display: none; }
 
 /* Botão "Área do Cliente": mesmo visual e hover do "Ver planos" (azul escuro, clareia ao passar o mouse). */
@@ -249,7 +251,7 @@ h1, h2, h3, p { margin: 0; }
 .hero__title { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; line-height: 0.98; letter-spacing: -0.03em; }
 .hero__line { display: block; font-size: clamp(2rem, 4.2vw, 3.7rem); }
 .hero__big { display: block; font-size: clamp(4.4rem, 10.6vw, 9.2rem); font-weight: 800; line-height: 1; padding-bottom: 0.06em; }
-.hero__lead { margin-top: 22px; max-width: 26ch; font-size: clamp(1.05rem, 1.6vw, 1.3rem); line-height: 1.5; color: #2a3757; }
+.hero__lead { margin-top: 22px; white-space: nowrap; font-size: clamp(0.95rem, 4.3vw, 1.3rem); line-height: 1.5; color: #2a3757; }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 34px; }
 
 /* Stage */
@@ -568,7 +570,6 @@ h1, h2, h3, p { margin: 0; }
   .hero__grid { grid-template-columns: 1fr; min-height: 0; gap: 8px; }
   .hero__stage { max-width: 520px; justify-self: center; margin-top: 12px; }
   .hero__copy { text-align: left; }
-  .hero__lead { max-width: 34ch; }
   .chip--a { right: 0; } .chip--b { left: 0; } .chip--c { right: -2%; }
 
   .strip__list { grid-template-columns: repeat(2, 1fr); gap: 28px 0; }
@@ -600,6 +601,7 @@ h1, h2, h3, p { margin: 0; }
   .chip { padding: 8px 12px 8px 8px; border-radius: 16px; }
   .chip__ico { width: 32px; height: 32px; border-radius: 10px; }
   .chip small { display: none; }
+  .chip--b { bottom: 33%; }
   .chip b { font-size: 0.74rem; }
     .strip__list h3 { font-size: 0.8rem; }
   .adv__list { grid-template-columns: 1fr; }
