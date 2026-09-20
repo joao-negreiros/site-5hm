@@ -9,6 +9,7 @@
   --navy-2: #0c2350;
   --blue: #1b65aa;
   --blue-2: #2d82e6;
+  --blue-deep: #0f3b75;
   --sky: #8cc4ff;
   --yellow: #ffc21a;
   --orange: #f7931e;
@@ -110,8 +111,8 @@ h1, h2, h3, p { margin: 0; }
 .btn--primary { background: var(--yellow); color: var(--ink); box-shadow: 0 10px 30px -10px rgba(247, 147, 30, 0.7); }
 .btn--primary:hover { transform: translateY(-3px); box-shadow: 0 18px 36px -12px rgba(247, 147, 30, 0.8); }
 .btn--primary:hover .btn__ico { transform: translateX(3px) rotate(-8deg); }
-.btn--ghost { padding: 0 26px; height: 58px; border: 1.5px solid var(--line); color: var(--ink); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(8px); }
-.btn--ghost:hover { border-color: var(--blue-2); color: var(--blue); transform: translateY(-3px); }
+.btn--ghost { padding: 0 30px; height: 58px; color: #fff; background: var(--blue-deep); box-shadow: 0 12px 28px -14px rgba(15, 59, 117, 0.75); }
+.btn--ghost:hover { background: var(--blue); transform: translateY(-3px); box-shadow: 0 18px 34px -14px rgba(27, 101, 170, 0.8); }
 .btn--block { width: 100%; justify-content: space-between; }
 /* Botões só de texto (sem círculo com ícone) */
 .btn--solo { padding: 0 34px; height: 58px; justify-content: center; }
@@ -191,7 +192,7 @@ h1, h2, h3, p { margin: 0; }
 .pill-btn {
   position: relative; isolation: isolate; overflow: hidden;
   display: inline-flex; align-items: center; justify-content: center; height: 50px; padding: 0 28px; border-radius: 999px;
-  background: rgba(255, 255, 255, 0.85); border: 1px solid var(--line); box-shadow: var(--shadow-1);
+  background: var(--blue-deep); color: #fff; border: 1px solid rgba(255, 255, 255, 0.14); box-shadow: 0 12px 28px -14px rgba(15, 59, 117, 0.75);
   font: 600 0.88rem/1 var(--font-display);
   transition: transform 0.7s var(--ease), box-shadow 0.7s var(--ease), border-color 0.7s var(--ease);
 }
@@ -199,7 +200,8 @@ h1, h2, h3, p { margin: 0; }
   content: ""; position: absolute; z-index: -1; inset: 0; border-radius: inherit; background: var(--yellow);
   transform: scaleX(0); transform-origin: left; transition: transform 0.8s var(--ease);
 }
-.pill-btn__txt { position: relative; }
+.pill-btn__txt { position: relative; transition: color 0.5s var(--ease); }
+.pill-btn:hover .pill-btn__txt, .pill-btn:focus-visible .pill-btn__txt { color: var(--ink); }
 .pill-btn:hover, .pill-btn:focus-visible { transform: translateY(-2px); border-color: transparent; box-shadow: 0 18px 38px -16px rgba(247, 147, 30, 0.55); }
 .pill-btn:hover::before, .pill-btn:focus-visible::before { transform: scaleX(1); }
 
