@@ -98,7 +98,7 @@
   addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
 
   // Seção ativa (rail + nav)
-  const sectionIds = ["top", "planos", "disponibilidade", "vantagens", "app", "contato"];
+  const sectionIds = ["top", "planos", "disponibilidade", "vantagens", "app", "como-contratar", "faq", "contato"];
   const railLinks = $$(".rail__link");
   const navLinks = $$(".nav__link");
   const spy = new IntersectionObserver((entries) => {
